@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+  <script>
+    window.tailwind.config = {
+      darkMode: ['class'],
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#6366F1',
+              light: '#8B5CF6',
+              dark: '#4F46E5',
+            },
+            secondary: {
+              DEFAULT: '#10B981',
+              light: '#34D399',
+              dark: '#047857',
+            },
+          },
+          boxShadow: {
+            'neon': '0 0 10px #6366F1, 0 0 40px #6366F1',
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --radius: 0.75rem;
+      }
+
+      .scroll-smooth {
+        scroll-behavior: smooth;
+      }
+    }
+  </style>
+  <title>Enhanced HTML</title>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 scroll-smooth">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-primary-light dark:bg-primary-dark w-full p-4 sticky top-0 shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-extrabold text-gray-100">Elev8</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#Login" class="hover:text-secondary transition-colors">Login</a></li>
+        <li><a href="#Signup" class="hover:text-secondary transition-colors">Signup</a></li>
+        <li><a href="#Dashboard" class="hover:text-secondary transition-colors">Dashboard</a></li>
+        <li><a href="#Insights" class="hover:text-secondary transition-colors">Insights</a></li>
+	<li><a href="#Content" class="hover:text-secondary transition-colors">Content</a></li>
+	<li><a href="#Advertiser" class="hover:text-secondary transition-colors">Advertiser Matches</a></li>
+	<li><a href="#Metrics" class="hover:text-secondary transition-colors">Metrics Module</a></li>
+	<li><a href="#Jobs" class="hover:text-secondary transition-colors">Jobs Module</a></li>
+	<li><a href="#Learn" class="hover:text-secondary transition-colors">Learn Module</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary to-secondary min-h-screen flex flex-col items-center justify-center text-center p-6">
+    <h1 class="text-6xl font-bold text-gray-100 mb-6">Elev8</h1>
+    <p class="text-lg max-w-3xl text-gray-200">"Rise Above, Create Beyond"</p>
+    <img src="https://images.unsplash.com/photo-1579869847557-1f67382cc158?q=80&w=1934&auto=format&fit=crop" alt="Hero Image" class="rounded-lg shadow-lg mt-8 w-full max-w-3xl">
+  </section>
+
+  <!-- Login Section -->
+  <section id="Login" class="bg-white dark:bg-gray-800 py-12">
+    <div class="container mx-auto">
+      <div class="max-w-lg mx-auto bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+        <h2 class="text-3xl font-semibold mb-4 text-primary">Login to Your Account</h2>
+        <form>
+          <div class="mb-4">
+            <label for="email" class="block text-lg font-medium">Email Address</label>
+            <input type="email" id="email" class="w-full px-4 py-2 mt-1 rounded-lg bg-gray-50 dark:bg-gray-600 focus:outline-none focus:ring focus:ring-primary-light">
+          </div>
+          <div class="mb-6">
+            <label for="password" class="block text-lg font-medium">Password</label>
+            <input type="password" id="password" class="w-full px-4 py-2 mt-1 rounded-lg bg-gray-50 dark:bg-gray-600 focus:outline-none focus:ring focus:ring-primary-light">
+          </div>
+          <button type="submit" class="w-full py-3 bg-primary text-gray-100 rounded-lg hover:bg-primary-dark transition-colors">Login</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signup Section -->
+  <section id="Signup" class="bg-secondary-light dark:bg-secondary-dark py-12 text-green-500">
+    <div class="container mx-auto">
+      <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-3xl font-semibold mb-4">Create an Account</h2>
+        <form>
+          <div class="mb-4">
+            <label for="name" class="block text-lg font-medium">Full Name</label>
+            <input type="text" id="name" class="w-full px-4 py-2 mt-1 rounded-lg bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-secondary-light">
+          </div>
+          <div class="mb-4">
+            <label for="email-signup" class="block text-lg font-medium">Email Address</label>
+            <input type="email" id="email-signup" class="w-full px-4 py-2 mt-1 rounded-lg bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-secondary-light">
+          </div>
+          <button type="submit" class="w-full py-3 bg-secondary text-gray-100 rounded-lg hover:bg-secondary-dark transition-colors">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+<section id="Dashboard" class="bg-gray-100 dark:bg-gray-800 py-12">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-8 text-primary">Social Media Dashboard</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-primary mb-2">Followers</h3>
+        <p class="text-4xl font-bold text-center text-primary-light">8,234</p>
+        <p class="text-sm text-center text-gray-500">+102 this week</p>
+      </div>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-primary mb-2">Engagement Rate</h3>
+        <p class="text-4xl font-bold text-center text-secondary-light">5.6%</p>
+        <p class="text-sm text-center text-gray-500">+0.8% from last week</p>
+      </div>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-primary mb-2">Recent Posts</h3>
+        <p class="text-4xl font-bold text-center text-secondary">124</p>
+        <p class="text-sm text-center text-gray-500">+15 posts this week</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Insights" class="bg-gradient-to-br from-secondary-light to-secondary-dark py-12 text-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-8">Audience Insights</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold">Age Group</h3>
+        <p class="text-4xl font-bold text-center">18-35</p>
+        <p class="text-sm text-center text-gray-300">40% of your audience</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold">Gender</h3>
+        <p class="text-4xl font-bold text-center">Male</p>
+        <p class="text-sm text-center text-gray-300">60% of your audience</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold">Location</h3>
+        <p class="text-4xl font-bold text-center">Canada</p>
+        <p class="text-sm text-center text-gray-300">75% of your audience</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Content" class="bg-gray-50 dark:bg-gray-900 py-12">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-primary mb-8">Content Suggestions</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-primary">AI in Social Media</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">+250% Engagement</p>
+      </div>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-primary">Future of E-commerce</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">+120% Engagement</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Advertiser" class="bg-gray-100 dark:bg-gray-900 py-12">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-primary mb-8">Advertiser Matches</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Advertiser Card -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-xl font-bold text-primary">Brand A</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Category: Fashion</p>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Ad Spend: <span class="font-bold text-green-500">$5000</span></p>
+        <div class="mt-4">
+          <span class="text-sm bg-green-200 text-green-800 py-1 px-2 rounded-full">High ROI</span>
+          <span class="text-sm bg-blue-200 text-blue-800 py-1 px-2 rounded-full">Trending</span>
+        </div>
+        <a href="#" class="block mt-4 text-primary font-semibold hover:underline">View Details</a>
+      </div>
+      <!-- Repeat similar cards -->
+    </div>
+  </div>
+</section>
+
+
+<section id="Metrics" class="bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-700 py-12">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-primary mb-8">Performance Metrics</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Metric Card -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-lg font-semibold text-primary">Impressions</h3>
+        <p class="text-2xl font-bold text-secondary mt-2">1,500,000</p>
+        <div class="relative w-full h-2 bg-gray-200 dark:bg-gray-600 rounded-full mt-4">
+          <div class="absolute top-0 left-0 h-2 bg-primary rounded-full" style="width: 75%;"></div>
+        </div>
+        <p class="text-sm mt-2 text-gray-500 dark:text-gray-300">Target: 2,000,000</p>
+      </div>
+      <!-- Repeat similar cards -->
+    </div>
+  </div>
+</section>
+
+<section id="Jobs" class="bg-gray-50 dark:bg-gray-900 py-12">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-primary mb-8">Job Listings</h2>
+    <!-- Filters -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label for="jobType" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Job Type</label>
+          <select id="jobType" class="w-full p-3 mt-1 border border-gray-300 dark:border-gray-600 rounded">
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Contract</option>
+          </select>
+        </div>
+        <div>
+          <label for="location" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Location</label>
+          <input type="text" id="location" placeholder="City, State" class="w-full p-3 mt-1 border border-gray-300 dark:border-gray-600 rounded">
+        </div>
+        <div>
+          <label for="salaryRange" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Salary Range</label>
+          <input type="range" id="salaryRange" class="w-full mt-3" min="30000" max="200000" step="5000">
+        </div>
+      </div>
+    </div>
+    <!-- Job Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-lg font-bold text-primary">Promote Skincare Brand</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Summary: Target Audience: aged 18-30</p>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Payment: Estimated Earnings: $300/video</p>
+        <a href="#" class="block mt-4 text-primary font-semibold hover:underline">Apply Now</a>
+      </div>
+      <!-- Repeat similar cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-lg font-bold text-primary">Promote toy Brand</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Summary: Target Audience: aged 18-25</p>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Payment: Estimated Earnings: $200/video</p>
+        <a href="#" class="block mt-4 text-primary font-semibold hover:underline">Apply Now</a>
+      </div>
+      <!-- Repeat similar cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <h3 class="text-lg font-bold text-primary">Promote food Brand</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Summary: Target Audience: aged 20-40</p>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Payment: Estimated Earnings: $125/video</p>
+        <a href="#" class="block mt-4 text-primary font-semibold hover:underline">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Learn" class="bg-gray-100 dark:bg-gray-900 py-12">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-secondary mb-8">Learning Center</h2>
+    <!-- Search Bar -->
+    <div class="relative mb-8">
+      <input type="text" class="w-full p-4 rounded-lg shadow-md" placeholder="Search for courses or topics...">
+      <button class="absolute top-2 right-2 bg-primary text-white px-4 py-2 rounded-lg">Search</button>
+    </div>
+    <!-- Categories -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-lg font-semibold text-primary">How to use Relevant HashTags</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-300">learn how to reach maximum audience with useful hashtags.</p>
+        <a href="#" class="block mt-4 text-primary font-semibold hover:underline">Explore</a>
+      </div>
+      <!-- Repeat similar cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-lg font-semibold text-primary">Create long term partnerships</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-300">Learn how to manage clients throughout our journey.</p>
+        <a href="#" class="block mt-4 text-primary font-semibold hover:underline">Explore</a>
+      </div>
+       <!-- Repeat similar cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-transform">
+        <h3 class="text-lg font-semibold text-primary">Tutorial for segmentation</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-300">How to target specific audience.</p>
+        <a href="#" class="block mt-4 text-primary font-semibold hover:underline">Explore</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Elev8. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
